@@ -1,21 +1,29 @@
 import Link from "next/link";
 
+const projects = [
+  {
+    slug: "urban-illusions",
+    title: "城市幻像"
+  }
+  // 你可以在这里添加更多项目
+];
+
 export default function Home() {
   return (
-    <main className="p-6 space-y-8 max-w-3xl mx-auto">
-      <h1 className="text-4xl font-bold">绪无的摄影主页</h1>
-      <p className="text-lg text-gray-600">
-        欢迎来到我的摄影世界。点击进入各个项目页，欣赏每一个主题下的持续创作。
-      </p>
-
-      <ul className="list-disc list-inside space-y-2 text-blue-600">
-        <li>
-          <Link href="/projects/urban-illusions" className="hover:underline">
-            城市幻像 Urban Illusions
+    <main className="p-6 space-y-12 max-w-5xl mx-auto">
+      <h1 className="text-4xl font-bold mb-8">我的摄影项目</h1>
+      <div className="grid gap-8">
+        {projects.map((project) => (
+          <Link
+            key={project.slug}
+            href={`/projects/${project.slug}`}
+            className="block p-6 border rounded-xl hover:shadow transition"
+          >
+            <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+            <p className="text-muted-foreground text-lg">{project.description}</p>
           </Link>
-        </li>
-        {/* 未来你可以在这里继续添加更多项目 */}
-      </ul>
+        ))}
+      </div>
     </main>
   );
 }
