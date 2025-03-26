@@ -1,0 +1,32 @@
+{
+  "name": "my-photography-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faye4250/my-photography-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Faye4250/my-photography-site/issues"
+  },
+  "homepage": "https://github.com/Faye4250/my-photography-site#readme",
+  "description": "",
+  "dependencies": {
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.13",
+    "@types/react": "19.0.12",
+    "typescript": "5.8.2"
+  }
+}
