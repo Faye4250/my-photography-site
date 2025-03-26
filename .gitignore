@@ -1,0 +1,26 @@
+# Node.js modules
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# System files
+.DS_Store
+
+# Local environment variables
+.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code settings (如果你使用 VS Code)
+.vscode/
+
+# MacOS 系统自动生成的文件
+*.DS_Store
+
+# Optional: 忽略照片原始文件（如果你上传的是经过挑选/压缩的版本）
+# /public/images/raw-photos/
