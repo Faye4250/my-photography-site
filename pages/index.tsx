@@ -1,18 +1,19 @@
 import Link from "next/link";
 
+// ✅ 正确地定义类型，description 是可选的（用问号）
 type Project = {
   slug: string;
   title: string;
-  description?: string; // 说明：description 是可选字段
+  description?: string;
 };
 
+// ✅ 正确地使用这个类型定义项目数组
 const projects: Project[] = [
   {
     slug: "urban-illusions",
-    title: "城市幻像",
-    // description: "城市是破碎的拼贴，是流动的幻梦。它映出真实与幻觉的缝隙，梦见雪豹伏在山脊，梦见热带花园安在边疆。"
-  },
-  // 可以继续添加更多项目
+    title: "城市幻像"
+    // 没有写 description 是可以的
+  }
 ];
 
 export default function Home() {
@@ -27,8 +28,12 @@ export default function Home() {
             className="block p-6 border rounded-xl hover:shadow transition"
           >
             <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
+
+            {/* ✅ 这里加了判断：如果有 description 才显示 */}
             {project.description && (
-              <p className="text-muted-foreground text-lg">{project.description}</p>
+              <p className="text-muted-foreground text-lg">
+                {project.description}
+              </p>
             )}
           </Link>
         ))}
