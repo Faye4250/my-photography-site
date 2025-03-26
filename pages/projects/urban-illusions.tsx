@@ -2,6 +2,12 @@ import fs from "fs";
 import path from "path";
 import Image from "next/image";
 
+export const metadata = {
+  title: "城市幻像",
+  description: "城市是破碎的拼贴，是流动的幻梦……" // ✅ 添加这一行
+};
+
+
 export async function getStaticProps() {
   const folder = path.join(process.cwd(), "public/images/urban-illusions");
   const files = fs
