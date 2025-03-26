@@ -1,11 +1,18 @@
 import Link from "next/link";
 
-const projects = [
+type Project = {
+  slug: string;
+  title: string;
+  description?: string; // 说明：description 是可选字段
+};
+
+const projects: Project[] = [
   {
     slug: "urban-illusions",
-    title: "城市幻像"
-  }
-  // 你可以在这里添加更多项目
+    title: "城市幻像",
+    // description: "城市是破碎的拼贴，是流动的幻梦。它映出真实与幻觉的缝隙，梦见雪豹伏在山脊，梦见热带花园安在边疆。"
+  },
+  // 可以继续添加更多项目
 ];
 
 export default function Home() {
@@ -20,7 +27,9 @@ export default function Home() {
             className="block p-6 border rounded-xl hover:shadow transition"
           >
             <h2 className="text-2xl font-semibold mb-2">{project.title}</h2>
-            <p className="text-muted-foreground text-lg">{project.description}</p>
+            {project.description && (
+              <p className="text-muted-foreground text-lg">{project.description}</p>
+            )}
           </Link>
         ))}
       </div>
